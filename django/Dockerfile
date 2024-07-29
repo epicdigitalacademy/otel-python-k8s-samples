@@ -24,5 +24,5 @@ EXPOSE 8000
 # CMD ["python", "manage.py", "runserver", "0.0.0.0:8000", "--noreload"]
 
 # when using gunicorn
-CMD ["/usr/local/bin/gunicorn -c gunicorn.conf.py", "djangoApp.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn -c gunicorn.conf.py", "djangoApp.wsgi:application", "--bind", "0.0.0.0:8000"]
 #CMD ["/usr/bin/gunicorn/gunicorn", "--config", "gunicorn.conf.py", "app:djangoApp.wsgi" "--bind", "0.0.0.0:8000"]
